@@ -28,7 +28,7 @@ const Hotel = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  const { data, loading, error, reFetch } = useFetch(`/hotels/find/${id}`);
+  const { data, loading, error, reFetch } = useFetch(`${process.env.REACT_APP_API_URL}/hotels/find/${id}`);
 
   const { dispatch } = useContext(SearchContext);
 

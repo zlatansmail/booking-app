@@ -32,7 +32,7 @@ const New = ({ inputs, title }) => {
         profilePic: url,
       };
       
-      await axios.post("/auth/register", newUser);
+      await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, newUser);
 
       console.log(newUser);
 

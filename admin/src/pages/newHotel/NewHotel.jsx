@@ -12,7 +12,7 @@ const NewHotel = () => {
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
 
-  const { data, loading, error } = useFetch("/rooms");
+  const { data, loading, error } = useFetch(`${process.env.REACT_APP_API_URL}/rooms`);
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -51,7 +51,7 @@ const NewHotel = () => {
         photos: list
       };
 
-      await axios.post("/hotels", newHotel);
+      await axios.post(`${process.env.REACT_APP_API_URL}/hotels`, newHotel);
     } catch (error) {
       console.log(error);
     }

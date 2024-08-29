@@ -4,7 +4,7 @@ import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
   const { data, loading, error, reFetch } = useFetch(
-    "hotels?featured=true&limit=4"
+    `${process.env.REACT_APP_API_URL}/hotels?featured=true&limit=4`
   );
 
   return (

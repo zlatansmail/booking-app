@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 const ReserveModal = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data, loading, error, reFetch } = useFetch(`/hotels/room/${hotelId}`);
+  const { data, loading, error, reFetch } = useFetch(`${process.env.REACT_APP_API_URL}/hotels/room/${hotelId}`);
   const { dates } = useContext(SearchContext);
 
   const navigate = useNavigate();
